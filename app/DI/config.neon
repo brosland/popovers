@@ -1,0 +1,6 @@
+userRepository:
+	class: App\Model\User\UserRepository
+
+userPopoverControl:
+	class: App\Components\UserPopover\UserPopoverControl
+	implement: App\Components\UserPopover\UserPopoverControlFactoryInterface

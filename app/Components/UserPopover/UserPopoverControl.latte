@@ -1,0 +1,21 @@
+<div n:snippet class="user-popover" style="width: 200px">
+	<div class="clearfix">
+		<div class="pull-left" style="margin-right: 15px">
+			<img src="{$user->getAvatar()}" alt="">
+		</div>
+		<div>
+			<b>{$user->getUsername()}</b>
+		</div>
+		<div>
+			<span class="text-muted">{$user->getFullname()}</span>
+		</div>
+	</div>
+	<hr>
+	<div class="text-right">
+		<a n:href="follow, !$following"
+		   n:class="'ajax btn', $following ? 'btn-primary' : 'btn-default'">
+			{if $following}Following{else}Follow{/if}
+		</a>
+		<a n:href="message" class="ajax btn btn-default">Message</a>
+	</div>
+</div>
