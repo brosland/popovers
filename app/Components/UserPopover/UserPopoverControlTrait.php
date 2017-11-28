@@ -48,14 +48,14 @@ trait UserPopoverControlTrait
 	/**
 	 * @param UserPopoverControlFactoryInterface $upcf
 	 */
-	public function injectUserPopoverControlFactoryInterface(UserPopoverControlFactoryInterface $upcf)
+	public function injectUserPopoverControlFactory(UserPopoverControlFactoryInterface $upcf)
 	{
 		$this->userPopoverControlFactory = $upcf;
 	}
 
 	// factories **************************************************************/
 	/**
-	 * @return UserPopoverControl
+	 * @return Multiplier
 	 * @throws BadRequestException
 	 */
 	protected function createComponentUserPopover()
