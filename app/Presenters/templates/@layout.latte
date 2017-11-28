@@ -40,7 +40,13 @@
 
 		<!-- custom -->
 		{block scripts}{/block}
-		<script>window.basePath = {$basePath};</script>
-		<script src="{$basePath}/js/main.js"></script>
+		<script>
+			window.basePath = {$basePath};
+
+			$(function () {
+				// init extensions
+				$.nette.init();
+			});
+		</script>
 	</body>
 </html>
