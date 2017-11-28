@@ -6,10 +6,6 @@
 			this.setup($('body'));
 		},
 		success: function (payload) {
-			if (payload.closeModal) {
-				this.closeModal();
-			}
-
 			if (payload.snippets) {
 				var snippets = this.ext('snippets');
 
