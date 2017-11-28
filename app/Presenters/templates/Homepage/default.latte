@@ -5,27 +5,8 @@
 	<div id="banner">
 		<h1 n:block=title>Congratulations!</h1>
 	</div>
-	<div class="row">
-		<div n:foreach="$userEntities as $userEntity" class="col-xs-4">
-			<div class="clearfix">
-				<div class="pull-left">
-					<div class="clearfix" n:userPopover="$userEntity">
-						<div class="pull-left" style="margin-right: 15px">
-							<img src="{$userEntity->getAvatar()}" alt="">
-						</div>
-						<div class="pull-left">
-							<div>
-								<b>{$userEntity->getUsername()}</b>
-							</div>
-							<div>
-								<span class="text-muted">{$userEntity->getFullname()}</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+	{control userList}
 
 	<h2>You have successfully created your <a href="https://nette.org">Nette</a> Web project.</h2>
 

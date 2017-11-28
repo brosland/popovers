@@ -2,30 +2,33 @@
 
 namespace App\Presenters;
 
-use App\Model\User\UserRepository;
-use Nette\Application\UI\Presenter;
+use App\Components\UserList\UserList;
+use App\Components\UserList\UserListFactoryInterface;
 
-class HomepagePresenter extends Presenter
+final class HomepagePresenter extends \App\Presenters\BasePresenter
 {
 
 	/**
-	 * @var UserRepository
+	 * @var UserListFactoryInterface
 	 */
-	private $userRepository;
+	private $userListFactory;
 
 
 	/**
-	 * @param UserRepository $userRepository
+	 * @param UserListFactoryInterface $userListFactory
 	 */
-	public function __construct(UserRepository $userRepository)
+	public function __construct(UserListFactoryInterface $userListFactory)
 	{
 		parent::__construct();
-
-		$this->userRepository = $userRepository;
+		
+		$this->userListFactory = $userListFactory;
 	}
 
-	public function renderDefault()
+	/**
+	 * @return UserList
+	 */
+	protected function createComponentUserList()
 	{
-		$this->template->userEntities = $this->userRepository->findUsers();
+		return $this->userListFactory->create();
 	}
 }

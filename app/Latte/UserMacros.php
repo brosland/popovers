@@ -26,7 +26,7 @@ class UserMacros extends MacroSet
 	public function macroUserPopover(MacroNode $node, PhpWriter $writer)
 	{
 		$write = '$_tmp = %node.array; echo \' data-user-popover="\' . '
-			. '$presenter->link(\'Users:userPopover\', $_tmp[0]->getId()) . \'"\';';
+			. '$presenter->link(\'showUserPopover!\', $_tmp[0]->getId()) . \'"\';';
 
 		return $writer->write($write);
 	}
